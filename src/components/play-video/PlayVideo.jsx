@@ -15,7 +15,7 @@ const PlayVideo = () => {
     const [apiData, setApiData] = useState(null);
     const [channelData, setChannelData] = useState(null);
     const [commentData, setCommentData] = useState([]);
-    const [showComments, setShowComments] = useState(true);
+    const [showComments, setShowComments] = useState(false);
     const [showDesc, setShowDesc] = useState(false);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -130,15 +130,17 @@ const PlayVideo = () => {
                     </p>
                     {showDesc && <p className='text-xs dark:text-gray-100'>{description}</p>}
                 </div>
-                <hr />
-                <h4 onClick={toggleComments} className="sm:text-lg text-xs cursor-pointer block sm:hidden my-1">
-                    {valueConverter(statistics?.commentCount)} Comments ...
-                </h4>
+               
+                <div className='bg-gray-200 dark:bg-stone-900 p-2 rounded-lg'>
+                    <h4 onClick={toggleComments} className="sm:text-lg text-xs cursor-pointer block sm:hidden my-1">
+                        {valueConverter(statistics?.commentCount)} Comments ...
+                    </h4>
 
-                {/* Render comments dynamically */}
-                {showComments && commentData?.map((item, idx) => (
-                    <Comment key={idx} item={item} />
-                ))}
+                    {/* Render comments dynamically */}
+                    {showComments && commentData?.map((item, idx) => (
+                        <Comment key={idx} item={item} />
+                    ))}
+                </div>
             </div>
         </div>
     );
