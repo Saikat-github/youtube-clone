@@ -110,7 +110,7 @@ const Login = () => {
                 required: true,
               })}
             />
-            <div className="flex justify-between">
+            <div className="flex justify-between gap-2">
               <button
                 type="submit"
                 className="flex gap-2 justify-center bg-blue-600 hover:bg-blue-700 text-white px-12 py-2 ${className} text-lg transition duration-300 my-6"

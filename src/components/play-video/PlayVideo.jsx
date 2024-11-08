@@ -52,7 +52,7 @@ const PlayVideo = () => {
         fetchVideoData();
     }, [fetchVideoData]);
 
-    
+
 
     const toggleDescription = useCallback(() => setShowDesc((prev) => !prev), []);
     const toggleComments = useCallback(() => setShowComments((prev) => !prev), []);
@@ -71,12 +71,15 @@ const PlayVideo = () => {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
-                className="w-full sm:h-[70vh] h-[40vh] sm:rounded-xl"
+                className="w-full sm:h-[70vh] h-[30vh] sm:rounded-xl"
             ></iframe>
-            <h3 className="mt-3 mx-2 sm:mx-0 font-semibold sm:text-xl text-sm">
+            <h3 className="my-2 mx-2 sm:mx-0 font-semibold sm:text-xl text-sm">
                 {snippet?.title || 'Title Here'}
             </h3>
-            <div className="play-video-info flex items-center sm:justify-between flex-wrap mt-3 text-sm text-gray-600 sm:flex-nowrap">
+            <p className="sm:hidden text-xs text-gray-700 dark:text-stone-400 mx-2">
+                {valueConverter(statistics?.viewCount)} views &bull; {moment(publishedAt).fromNow()}
+            </p>
+            <div className="play-video-info flex items-center sm:justify-between flex-wrap mt-2 text-sm text-gray-600 sm:flex-nowrap">
                 <div className="publisher flex justify-between w-full sm:w-auto mx-2 my-2 sm:mx-0">
                     <div className=" flex gap-2">
                         <img
@@ -119,17 +122,17 @@ const PlayVideo = () => {
 
             <div className="description sm:text-sm text-xs sm:mx-0 mx-2">
                 <div className="desc-details mb-2">
-                    <p className="font-semibold text-gray-700 dark:text-white">
+                    <p className="hidden sm:block text-sm text-gray-700 dark:text-stone-400">
                         {valueConverter(statistics?.viewCount)} views &bull; {moment(publishedAt).fromNow()}
                     </p>
-                    <p className="cursor-pointer" onClick={toggleDescription}>
+                    <p className="cursor-pointer text-gray-700 dark:text-stone-400" onClick={toggleDescription}>
                         {showDesc ? 'show less...' : 'more...'}
                     </p>
-                    {showDesc && <p className='text-xs text-gray-100'>{description}</p>}
+                    {showDesc && <p className='text-xs dark:text-gray-100'>{description}</p>}
                 </div>
                 <hr />
-                <h4 onClick={toggleComments} className="my-4 sm:text-xl text-sm cursor-pointer">
-                    {valueConverter(statistics?.commentCount)} Comments
+                <h4 onClick={toggleComments} className="sm:text-lg text-xs cursor-pointer block sm:hidden my-1">
+                    {valueConverter(statistics?.commentCount)} Comments ...
                 </h4>
 
                 {/* Render comments dynamically */}
