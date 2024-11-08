@@ -22,9 +22,7 @@ useEffect(() => {
   const checkUserSession = async () => {
     try {
       const user = await authService.getCurrentUser();
-      console.log(user)
       if (user) {
-        console.log(user.emailVerification)
         setUserData(user)
       } else {
         setUserData(null)

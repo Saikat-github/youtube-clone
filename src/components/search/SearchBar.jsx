@@ -84,12 +84,12 @@ const SearchBar = () => {
 
     return (
         <div className="search-box flex items-center border border-gray-400 
-        mr-4 py-2 px-3 rounded-full dark:border-gray-150 dark:bg-transparent">
+        sm:mr-4 mr-1 py-2 px-3 rounded-full dark:border-gray-150 dark:bg-transparent">
             <input type="text" placeholder='Search' className='md:w-[400px] border-none outline-none bg-transparent text-xs md:text-sm'
                 value={query}
                 onChange={(e) => setQuery(e.target.value)} />
             <img src={crossIcon} className={`w-4 mr-2 cursor-pointer ${query ? 'inline' : "hidden"}`} onClick={() => setQuery("")} alt="" />
-            {loading ? <div className='w-6 h-6 border-2 border-t-black  rounded-full animate-spin'></div> : <img src={search_icon} alt="" className='w-6 h-6 cursor-pointer' onClick={handleSearch}/>}
+            {loading ? <div className='w-6 h-6 border-2 border-t-black  rounded-full animate-spin'></div> : <img src={search_icon} alt="" className='sm:h-6 h-4 pr-1 sm:pr-0 cursor-pointer' onClick={handleSearch}/>}
         </div>
     );
 };

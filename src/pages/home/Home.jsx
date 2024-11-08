@@ -15,7 +15,7 @@ const Home = () => {
     {/* <h1 className='text-5xl text-center my-6'>Home</h1> */}
     <Feed/>
     </div>
-  ) : <p className='text-center my-20 text-2xl h-screen'>Please <span className='text-blue-700 cursor-pointer' onClick={() => navigate("/verifypage")}>verify</span> your email to watch videos</p>) : <p className='text-center my-20 text-2xl h-screen'>Please <span className='text-blue-700 cursor-pointer' onClick={() => navigate("/login")}>login</span> to watch videos</p>
+  ) : <p className='text-center my-20 text-2xl h-screen '>Please <span className='text-blue-700 cursor-pointer' onClick={() => navigate("/verifypage")}>verify</span> your email to watch videos</p>) : <p className='text-center my-20 text-2xl h-screen'>Please <span className='text-blue-700 cursor-pointer' onClick={() => navigate("/login")}>login</span> to watch videos</p>
 }
 
 export default Home

@@ -29,8 +29,8 @@ const VerifyPage = () => {
   }
 
   return (
-    <div className='flex flex-col justify-center h-screen items-center'>
-      <p className='text-2xl'>Click the button below to verify your email</p>
+    <div className='flex flex-col my-20 h-screen items-center'>
+      <p className='md:text-2xl mx-4'>Click the button below to verify your email</p>
       <button type="submit" className="flex gap-2 justify-center bg-blue-600 hover:bg-blue-700 text-white px-12 py-2 ${className} text-lg transition duration-300 my-6"
         disabled={loading} onClick={btnHandler}>
         Verify Email
